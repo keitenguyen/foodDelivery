@@ -18,7 +18,6 @@ const App: () => Node = () => {
   // const insets = useSafeAreaInsets();
   return (
     <View style={styles.container}>
-      <View style={{height: 50}} />
       <LoginScreen />
     </View>
   );

@@ -7,6 +7,7 @@ const TextBox = ({
   label,
   placeholder,
   value,
+  type,
   errorMsg,
   icon,
   iconColor,
@@ -27,6 +28,7 @@ const TextBox = ({
         style={[styles.textBox, styleTextBox]}
         onChange={setData}
         value={data}
+        secureTextEntry={type === 'password'}
       />
     </View>
   );
