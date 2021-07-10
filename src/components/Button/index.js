@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
-import { FONT_DEMI, FONT_REGULAR, getHeight } from "../../constants/Styles";
+import { FONT_DEMI, getHeight } from "../../constants/Styles";
 export const Button = ({navigateLink, text, bgColor, styleContainer}) => {
   return (
     <View style={[styles.container, styleContainer]}>

@@ -1,8 +1,8 @@
 import {StyleSheet, Dimensions} from 'react-native';
-const REGULAR = '400';
-const MEDIUM = '500';
-const DEMI = '600';
-const BOLD = '700';
+export const REGULAR = '400';
+export const MEDIUM = '500';
+export const DEMI = '600';
+export const BOLD = '700';
 export const FONT_REGULAR = 'AvenirNextLTPro-Regular';
 export const FONT_MEDIUM = 'AvenirNextLTPro-Medium';
 export const FONT_DEMI = 'AvenirNextLTPro-Demi';

@@ -14,20 +14,22 @@ import {
 import {Button} from '../../components/Button';
 import {FacebookIcon, GoogleIcon} from '../../constants/Images';
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
   return (
     <View>
       <NoLogin />
-      <Text style={[styles.heading, TEXT_STYLE.largeTitle]}>Sign In</Text>
+      <Text style={[styles.heading, TEXT_STYLE.largeTitle]}>Sign Up</Text>
       <View style={styles.textWrapper}>
-        <Text style={[TEXT_STYLE.body2, styles.textDescription]}>
-          Don't have an account?
-        </Text>
-        <TouchableOpacity>
-          <Text style={[TEXT_STYLE.body2, styles.textLink]}>
-            {' Sign up now!'}
+        <Text>
+          <Text style={[TEXT_STYLE.body2, styles.textDescription]}>
+            Enter your Email and new password {'\n'}for sign up, or
           </Text>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[TEXT_STYLE.body2, styles.textLink]}>
+              {' Already have account?'}
+            </Text>
+          </TouchableOpacity>
+        </Text>
       </View>
 
       <TextBox
@@ -44,16 +46,28 @@ const LoginScreen = () => {
         value={''}
       />
 
-      <TouchableOpacity style={styles.forgotPassword}>
-        <Text style={[styles.textForgotPassword, TEXT_STYLE.body2]}>
-          Forgot password?
-        </Text>
-      </TouchableOpacity>
+      <TextBox
+        type={'password'}
+        placeholder={'Confirm Password'}
+        styleTextBox={styles.textBox}
+        styleContainer={styles.textBoxContainer}
+        value={''}
+      />
+
       <Button
         bgColor={COLORS.primaryColor.p1}
         text="Sign In"
         styleContainer={styles.loginBtn}
       />
+
+      <TouchableOpacity style={styles.forgotPassword}>
+        <Text style={[styles.textForgotPassword, TEXT_STYLE.body2]}>
+          <Text>By signing up you agree to our </Text>
+          <Text>Terms Condition</Text>
+          <Text>{' & '}</Text>
+          <Text>Privacy Policy</Text>
+        </Text>
+      </TouchableOpacity>
 
       <Text style={styles.textOr}>or</Text>
 
@@ -97,14 +111,13 @@ const styles = StyleSheet.create({
   textWrapper: {
     marginHorizontal: getWidth(24),
     marginBottom: getHeight(32),
-    alignItems: 'center',
-    flexDirection: 'row',
   },
   textDescription: {
     color: '#697586',
   },
   textLink: {
     color: COLORS.primaryColor.p1,
+    lineHeight: getHeight(59),
   },
   forgotPassword: {
     marginBottom: getHeight(24),
@@ -160,4 +173,4 @@ const styles = StyleSheet.create({
     fontFamily: FONT_MEDIUM,
   },
 });
-export default LoginScreen;
+export default RegisterScreen;

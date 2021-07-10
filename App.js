@@ -1,24 +1,15 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import type {Node} from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-
 import LoginScreen from './src/screens/Login';
+import RegisterScreen from './src/screens/Register';
 
 const App: () => Node = () => {
   // const insets = useSafeAreaInsets();
   return (
     <View style={styles.container}>
-      <LoginScreen />
+      <RegisterScreen />
     </View>
   );
 };
