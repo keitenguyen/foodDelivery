@@ -4,7 +4,7 @@ import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {CustomHeader} from '../../components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { MenuHorizontal } from "../../components/Menu";
-import { FoodCommon } from "../../components/FoodItem";
+import { FoodCommon, FoodWrapperBordered } from "../../components/FoodItem";
 import { PizzaImage } from "../../constants/Images";
 
 const CategoryScreen = () => {
@@ -21,7 +21,7 @@ const CategoryScreen = () => {
       />
       <MenuHorizontal onClickMenu={null} />
 
-      <FoodCommon
+      <FoodWrapperBordered
         title={'Pizzon - Crib Ln'}
         subTitle={'KCal: 14'}
         description={'Shrimp, mushroom, cheese, tomato'}
@@ -41,6 +41,7 @@ const CategoryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#E5E5E5'
   },
 });
 
