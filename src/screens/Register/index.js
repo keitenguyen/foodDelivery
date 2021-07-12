@@ -60,14 +60,12 @@ const RegisterScreen = () => {
         styleContainer={styles.loginBtn}
       />
 
-      <TouchableOpacity style={styles.forgotPassword}>
-        <Text style={[styles.textForgotPassword, TEXT_STYLE.body2]}>
-          <Text>By signing up you agree to our </Text>
-          <Text>Terms Condition</Text>
-          <Text>{' & '}</Text>
-          <Text>Privacy Policy</Text>
-        </Text>
-      </TouchableOpacity>
+      <Text style={[styles.stylePolicy, TEXT_STYLE.body2]}>
+        <Text>By signing up you agree to our </Text>
+        <Text style={styles.highlightPolicy}>Terms Condition</Text>
+        <Text>{' & '}</Text>
+        <Text style={styles.highlightPolicy}>Privacy Policy</Text>
+      </Text>
 
       <Text style={styles.textOr}>or</Text>
 
@@ -122,10 +120,6 @@ const styles = StyleSheet.create({
   forgotPassword: {
     marginBottom: getHeight(24),
   },
-  textForgotPassword: {
-    textAlign: 'center',
-    color: COLORS.neutral.n1,
-  },
   textOr: {
     textAlign: 'center',
     marginVertical: getHeight(24),
@@ -171,6 +165,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#fff',
     fontFamily: FONT_MEDIUM,
+  },
+  stylePolicy: {
+    textAlign: 'center',
+    marginHorizontal: getWidth(57),
+    marginTop: getHeight(16),
+    color: COLORS.neutral.n2,
+  },
+  highlightPolicy: {
+    color: COLORS.primaryColor.p1,
   },
 });
 export default RegisterScreen;

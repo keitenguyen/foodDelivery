@@ -4,13 +4,15 @@ import {View, StyleSheet} from 'react-native';
 
 import LoginScreen from './src/screens/Login';
 import RegisterScreen from './src/screens/Register';
+import StackNavigator from "./src/navigation";
+import { NavigationContainer } from "@react-navigation/native";
 
 const App: () => Node = () => {
   // const insets = useSafeAreaInsets();
   return (
-    <View style={styles.container}>
-      <RegisterScreen />
-    </View>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 };
 
