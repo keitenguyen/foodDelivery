@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {FoodCommon} from './index';
-import {getHeight, getWidth} from '../../constants/Styles';
+import {getHeight, getWidth, TEXT_STYLE} from '../../constants/Styles';
 
 const FoodWrapperBordered = ({
   image,
@@ -14,11 +14,14 @@ const FoodWrapperBordered = ({
   originalPrice,
   rating,
   moreInfo,
-  isBorder,
+  discount,
   priceColor,
 }) => {
   return (
     <View style={[styles.container, styles.shadow]}>
+      <View style={styles.discountWrapper}>
+        <Text style={[TEXT_STYLE.body2, styles.discountText]}>{discount}</Text>
+      </View>
       <View style={[styles.wrapper]}>
         <FoodCommon
           image={image}
@@ -42,6 +45,7 @@ const FoodWrapperBordered = ({
 const styles = StyleSheet.create({
   container: {
     borderRadius: 12,
+    backgroundColor: '#fff',
   },
   wrapper: {
     marginHorizontal: getWidth(16),
@@ -49,9 +53,25 @@ const styles = StyleSheet.create({
   },
   shadow: {
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
     shadowRadius: 2,
+  },
+  discountWrapper: {
+    width: getWidth(56),
+    height: getHeight(25),
+    backgroundColor: '#3ABC5E',
+    borderTopLeftRadius: 12,
+    borderBottomRightRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 1,
+  },
+  discountText: {
+    color: '#fff',
   },
 });
 export default FoodWrapperBordered;

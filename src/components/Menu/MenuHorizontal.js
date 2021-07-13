@@ -10,24 +10,33 @@ import {
 import {COLORS, getHeight, getWidth} from '../../constants/Styles';
 import Colors from '../../styles/Colors';
 
-const MenuHorizontal = ({onClickMenu}) => {
-  const activatedId = 1;
-  const items = [
-    'item 1',
-    'item 2',
-    'item 3',
-    'item 4',
-    'item 5',
-    'item 6',
-    'item 7',
-    'item 8',
-    'item 9',
-    'item 10',
-  ];
-  const renderTab = (title, index, activeId) => {
-    const isMatching = index === activeId;
+const MenuHorizontal = ({onClickMenu, items}) => {
+  const [menus, setMenus] = React.useState([]);
+
+  React.useEffect(() => {
+    if (items.length > 0) {
+      setMenus(items);
+    }
+  }, [menus]);
+
+  const handleClickItem = item => {
+    const data = menus.map(menu => {
+      menu.isActive = menu.id === item.id;
+
+      return menu;
+    });
+
+    setMenus(data);
+    if (onClickMenu) {
+      onClickMenu(item);
+    }
+  };
+
+  const renderTab = (item, index) => {
+    const isMatching = item.isActive;
     return (
       <TouchableOpacity
+        onPress={() => handleClickItem(item)}
         style={[
           styles.tabContentWrapper,
           index === 0 && styles.firstItemWrapper,
@@ -38,7 +47,7 @@ const MenuHorizontal = ({onClickMenu}) => {
             isMatching && styles.textActive,
             !isMatching && styles.textInactive,
           ]}>
-          {title}
+          {item.name}
         </Text>
         {isMatching && <View style={styles.dot} />}
       </TouchableOpacity>
@@ -53,7 +62,7 @@ const MenuHorizontal = ({onClickMenu}) => {
         directionalLockEnabled={true}
         bounces={false}>
         <View style={styles.tabs}>
-          {items.map((item, index) => renderTab(item, index, activatedId))}
+          {items.map((item, index) => renderTab(item, index))}
         </View>
       </ScrollView>
     </View>

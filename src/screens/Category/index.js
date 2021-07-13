@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { MenuHorizontal } from "../../components/Menu";
 import { FoodCommon, FoodWrapperBordered } from "../../components/FoodItem";
 import { PizzaImage } from "../../constants/Images";
+import { menus } from "../../constants/Data";
 
 const CategoryScreen = () => {
   const backButton = <Icon name="chevron-left" size={14} color="#4F585E" />;
@@ -19,7 +20,7 @@ const CategoryScreen = () => {
         description={'11km - 15km'}
         hasBorder={false}
       />
-      <MenuHorizontal onClickMenu={null} />
+      <MenuHorizontal onClickMenu={null} items={menus} />
 
       <FoodWrapperBordered
         title={'Pizzon - Crib Ln'}
@@ -33,6 +34,7 @@ const CategoryScreen = () => {
         moreInfo={'twice by you'}
         isBorder={true}
         priceColor={''}
+        discount={'20%'}
       />
     </SafeAreaView>
   );
@@ -41,7 +43,7 @@ const CategoryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E5E5E5'
+    backgroundColor: '#E5E5E5',
   },
 });
 
