@@ -5,7 +5,7 @@ import {CustomHeader} from '../../components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { MenuHorizontal } from "../../components/Menu";
 import { FoodCommon, FoodWrapperBordered } from "../../components/FoodItem";
-import { PizzaImage } from "../../constants/Images";
+import { PizzaImage } from "../../assets/images";
 import { menus } from "../../constants/Data";
 
 const CategoryScreen = () => {

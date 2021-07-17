@@ -12,7 +12,7 @@ import {
   TEXT_STYLE,
 } from '../../constants/Styles';
 import {Button} from '../../components/Button';
-import {FacebookIcon, GoogleIcon} from '../../constants/Images';
+import {FacebookIcon, GoogleIcon} from '../../assets/images';
 
 const LoginScreen = () => {
   return (

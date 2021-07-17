@@ -36,6 +36,7 @@ const MenuHorizontal = ({onClickMenu, items}) => {
     const isMatching = item.isActive;
     return (
       <TouchableOpacity
+        key={index}
         onPress={() => handleClickItem(item)}
         style={[
           styles.tabContentWrapper,
